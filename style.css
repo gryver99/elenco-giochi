@@ -26,10 +26,10 @@
   box-shadow: 0 10px 22px rgba(0, 0, 0, 0.18);
 }
 
-/* Contenitore immagine fisso */
+/* ====== CONTENITORE IMMAGINE RETTANGOLARE ====== */
 .card-image {
-  width: 90px;
-  height: 90px;
+  width: 140px;        /* più largo */
+  height: 80px;        /* più basso */
   border-radius: 12px;
   overflow: hidden;
   flex-shrink: 0;
@@ -37,18 +37,16 @@
   background: #ddd;
 }
 
-/* ====== SOLUZIONE B: CROP INTELLIGENTE ====== */
+/* Immagine adattata perfettamente */
 .card-image img {
-  width: 120% !important;        /* zoom leggero per evitare bordi */
-  height: 120% !important;
+  width: 100% !important;
+  height: 100% !important;
   object-fit: cover !important;
   object-position: center !important;
   display: block !important;
 
   max-width: none !important;
   max-height: none !important;
-
-  transform: translate(-10%, -10%); /* centratura dinamica */
 }
 
 /* ====== TESTO ====== */
@@ -127,21 +125,19 @@
   }
 
   .card-image {
-    width: 130px;
-    height: 130px;
+    width: 200px;   /* più largo su mobile */
+    height: 120px;  /* proporzione panoramica */
   }
 
   .card-image img {
-    width: 130% !important;
-    height: 130% !important;
+    width: 100% !important;
+    height: 100% !important;
     object-fit: cover !important;
     object-position: center !important;
     display: block !important;
 
     max-width: none !important;
     max-height: none !important;
-
-    transform: translate(-15%, -15%);
   }
 
   .card-content h3 {
