@@ -1,65 +1,125 @@
-/* GRIGLIA STILE ANIME*/
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-  gap: 18px;
-  padding: 20px;
+:root {
+    --gl-bg: #0f0f0f;
+    --gl-card-bg: #1a1a1a;
+    --gl-accent: #39FF14; /* Verde Neon stile gaming */
+    --gl-text: #ffffff;
+    --gl-text-muted: #aaaaaa;
 }
 
-/* CARD VERTICALE */
-.card {
-  background: #ffffff15;
-  border-radius: 12px;
-  overflow: hidden;
-  backdrop-filter: blur(6px);
-  border: 1px solid #ffffff25;
-  transition: transform .2s ease;
+.gl-container {
+    background-color: var(--gl-bg);
+    padding: 20px;
+    font-family: 'Inter', sans-serif;
 }
 
-.card:hover {
-  transform: translateY(-4px);
+.gl-news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
 }
 
-/* IMMAGINE COVER */
-.card-image {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  display: block;
+.gl-card {
+    background: var(--gl-card-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid #333;
 }
 
-/* CONTENUTO */
-.card-content {
-  padding: 10px;
+.gl-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--gl-accent);
+    box-shadow: 0 10px 20px rgba(0, 255, 0, 0.1);
 }
 
-.card-content h3 {
-  font-size: 14px;
-  font-weight: 700;
-  margin-bottom: 6px;
+.gl-thumb {
+    position: relative;
+    aspect-ratio: 16/9;
 }
 
-.card-meta {
-  font-size: 11px;
-  opacity: 0.7;
+.gl-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-/* PAGINAZIONE */
-.pagination {
-  text-align: center;
-  margin: 20px 0;
+.gl-category {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: var(--gl-accent);
+    color: #000;
+    padding: 4px 12px;
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    border-radius: 4px;
 }
 
-.pagination button {
-  padding: 8px 14px;
-  margin: 0 4px;
-  border-radius: 6px;
-  border: none;
-  background: #e0e0e0;
-  cursor: pointer;
+.gl-body {
+    padding: 20px;
 }
 
-.pagination button.active {
-  background: #4caf50;
-  color: white;
+.gl-date {
+    color: var(--gl-accent);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.gl-title {
+    margin: 10px 0;
+    font-size: 1.25rem;
+    line-height: 1.4;
+}
+
+.gl-title a {
+    color: var(--gl-text);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.gl-title a:hover {
+    color: var(--gl-accent);
+}
+
+.gl-excerpt {
+    color: var(--gl-text-muted);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Tronca il testo */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Paginazione */
+.gl-pagination {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.gl-page-item {
+    padding: 10px 18px;
+    background: var(--gl-card-bg);
+    color: var(--gl-text);
+    text-decoration: none;
+    border-radius: 6px;
+    border: 1px solid #333;
+    transition: 0.2s;
+    font-weight: bold;
+}
+
+.gl-page-item:hover, .gl-page-item.active {
+    background: var(--gl-accent);
+    color: #000;
+    border-color: var(--gl-accent);
+}
+
+@media (max-width: 600px) {
+    .gl-news-grid {
+        grid-template-columns: 1fr;
+    }
 }
