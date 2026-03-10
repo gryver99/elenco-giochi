@@ -29,11 +29,17 @@ function renderPage(page) {
     const icon = getStatusIcon(game.status);
 
     card.innerHTML = `
-     <a href="${game.url}" target="_blank">
-  <div class="card-image">
-    <img src="${game.image}" alt="${game.title}">
+  <a href="${game.url}" target="_blank">
+    <img class="card-image" src="${game.image}" alt="${game.title}">
+  </a>
+
+  <div class="card-content">
+    <h3>${icon} ${game.title} (${game.month}) – ${game.status}</h3>
+    <p>${game.description}</p>
+    <p class="card-meta">Aggiornato il ${formatDate(game.updated_at)}</p>
+    <a href="${game.url}" target="_blank">Leggi di più</a>
   </div>
-</a>
+`;
 
       <div class="card-content">
         <h3>${icon} ${game.title} (${game.month}) – ${game.status}</h3>
