@@ -126,12 +126,16 @@
     height: 130px;
   }
 
-  .card-image img {
+ .card-image img {
   width: 100% !important;
   height: 100% !important;
   object-fit: cover !important;
   object-position: center !important;
   display: block !important;
+
+  /* 🔥 Queste due righe risolvono il problema */
+  max-width: none !important;
+  max-height: none !important;
 }
 
   .card-content h3 {
