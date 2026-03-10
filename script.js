@@ -1,4 +1,4 @@
-const CARDS_PER_PAGE = 10;
+const CARDS_PER_PAGE = 20;
 let games = [];
 let currentPage = 1;
 
@@ -7,7 +7,6 @@ async function loadData() {
   const data = await res.json();
   games = data.games || [];
 
-  // Ordina per data (dal più recente)
   games.sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at));
 
   renderPage(1);
@@ -34,10 +33,8 @@ function renderPage(page) {
       </a>
 
       <div class="card-content">
-        <h3>${icon} ${game.title} (${game.month}) – ${game.status}</h3>
-        <p>${game.description}</p>
+        <h3>${icon} ${game.title}</h3>
         <p class="card-meta">Aggiornato il ${formatDate(game.updated_at)}</p>
-        <a href="${game.url}" target="_blank">Leggi di più</a>
       </div>
     `;
 
@@ -56,15 +53,8 @@ function renderPagination() {
     const btn = document.createElement('button');
     btn.textContent = i;
     if (i === currentPage) btn.classList.add('active');
-    btn.addEventListener('click', () => renderPage(i));
+    btn.onclick = () => renderPage(i);
     pag.appendChild(btn);
-  }
-
-  if (currentPage < totalPages) {
-    const next = document.createElement('button');
-    next.textContent = 'Next';
-    next.addEventListener('click', () => renderPage(currentPage + 1));
-    pag.appendChild(next);
   }
 }
 
