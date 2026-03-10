@@ -1,126 +1,74 @@
-/* ============================================================
-   CARD BASE
-   ============================================================ */
+/* RESET IMMAGINI GLOBALI */
+.card img,
+.card-image img {
+  max-width: none !important;
+  height: auto !important;
+}
+
+/* CARD */
 .card {
   display: flex;
   gap: 14px;
   padding: 16px;
   border-radius: 16px;
-
-  background: rgba(255, 255, 255, 0.25) !important;
+  background: rgba(255, 255, 255, 0.25);
   backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-
-  border: 1px solid rgba(76, 175, 80, 0.35) !important;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
-
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  border: 1px solid rgba(76, 175, 80, 0.35);
 }
 
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.18);
-}
-
-/* ============================================================
-   RIQUADRO VERDE (CONTENITORE REALE DELL’IMMAGINE)
-   ============================================================ */
+/* RIQUADRO VERDE */
 .card-image {
-  width: 150px !important;
-  height: 100px !important;
-
-  background: #4caf50 !important;
-  border-radius: 12px !important;
-  overflow: hidden !important;
-
-  position: relative !important;
-  flex-shrink: 0 !important;
-
-  padding: 0 !important;
-  margin: 0 !important;
-  border: none !important;
+  width: 150px;
+  height: 100px;
+  background: #4caf50;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
 }
 
-/* ============================================================
-   ANNULLA TUTTI I WRAPPER INTERNI (GitHub + Sites)
-   ============================================================ */
-.card-image > * {
-  position: absolute !important;
-  inset: 0 !important;
-
-  width: 100% !important;
-  height: 100% !important;
-
-  margin: 0 !important;
-  padding: 0 !important;
-  border: none !important;
-}
-
-/* ============================================================
-   L’IMMAGINE RIEMPIE IL RIQUADRO VERDE AL 100%
-   ============================================================ */
+/* L’IMMAGINE RIEMPIE IL VERDE */
 .card-image img {
-  position: absolute !important;
-  top: 0 !important;
-  left: 0 !important;
-
-  width: 100% !important;
-  height: 100% !important;
-
-  object-fit: cover !important;
-  object-position: center !important;
-
-  max-width: none !important;
-  max-height: none !important;
-
-  display: block !important;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
 }
 
-/* ============================================================
-   TESTO
-   ============================================================ */
+/* TESTO */
 .card-content h3 {
   font-size: 16px;
   font-weight: 700;
   margin-bottom: 6px;
-  color: #000 !important;
 }
 
 .card-content p {
   font-size: 13px;
   line-height: 1.35;
-  color: #111 !important;
 }
 
 .card-meta {
   font-size: 11px;
-  color: #333 !important;
+  opacity: 0.8;
 }
 
-/* ============================================================
-   BOTTONE
-   ============================================================ */
+/* BOTTONE */
 .card a {
   display: inline-block;
   margin-top: 6px;
   padding: 6px 12px;
-  background: #4caf50 !important;
-  color: #fff !important;
+  background: #4caf50;
+  color: #fff;
   text-decoration: none;
   border-radius: 6px;
   font-size: 13px;
   font-weight: 600;
-  transition: background 0.2s ease, transform 0.2s ease;
 }
 
-.card a:hover {
-  background: #43a047 !important;
-  transform: translateY(-2px);
-}
-
-/* ============================================================
-   PAGINAZIONE
-   ============================================================ */
+/* PAGINAZIONE */
 .pagination {
   text-align: center;
   margin-top: 18px;
@@ -133,25 +81,15 @@
   border-radius: 50%;
   border: none;
   background: #e0e0e0;
-  color: #000;
-  font-size: 14px;
   cursor: pointer;
-  transition: background 0.2s ease, transform 0.2s ease;
-}
-
-.pagination button:hover {
-  background: #cfcfcf;
-  transform: translateY(-2px);
 }
 
 .pagination button.active {
-  background: #4caf50 !important;
-  color: #fff !important;
+  background: #4caf50;
+  color: #fff;
 }
 
-/* ============================================================
-   MOBILE
-   ============================================================ */
+/* MOBILE */
 @media (max-width: 600px) {
   .card {
     flex-direction: column;
@@ -160,24 +98,7 @@
   }
 
   .card-image {
-    width: 100% !important;
-    height: 180px !important;
-  }
-
-  .card-image > * {
-    inset: 0 !important;
-  }
-
-  .card-image img {
-    width: 100% !important;
-    height: 100% !important;
-  }
-
-  .card-content h3 {
-    font-size: 18px;
-  }
-
-  .card-content p {
-    font-size: 14px;
+    width: 100%;
+    height: 180px;
   }
 }
