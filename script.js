@@ -6,7 +6,13 @@ async function loadData() {
   const res = await fetch('data.json');
   const data = await res.json();
   games = data.games || [];
+
+  // 🔥 Ordina automaticamente per data (dal più recente al più vecchio)
+  games.sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at));
+
   renderPage(1);
+}
+
 }
 
 function renderPage(page) {
