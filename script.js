@@ -36,7 +36,7 @@ function renderPage(page) {
 </a>
 
       <div class="card-content">
-        <h3>${icon} ${game.title} Codes (${game.month}) – ${game.status}</h3>
+        <h3>${icon} ${game.title} (${game.month}) – ${game.status}</h3>
         <p>${game.description}</p>
         <p class="card-meta">Aggiornato il ${formatDate(game.updated_at)}</p>
 
