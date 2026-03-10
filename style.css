@@ -1,86 +1,132 @@
+/* ====== STRUTTURA GENERALE ====== */
+
 body {
   font-family: system-ui, sans-serif;
-  background: #0b0b0f;
+  background: transparent; /* 🔥 sfondo trasparente */
   color: #f5f5f5;
   margin: 0;
 }
 
 .page {
-  max-width: 1000px;
-  margin: 30px auto;
-  padding: 0 15px;
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 0 10px;
 }
 
 h1 {
   text-align: center;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
+  font-size: 22px;
 }
+
+/* ====== CARD ====== */
 
 .cards-container {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 12px;
 }
 
 .card {
   display: flex;
-  gap: 15px;
-  padding: 15px;
-  border-radius: 10px;
-  background: #15151f;
-  border: 1px solid #2b2b3a;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 12px;
+  background: rgba(20, 20, 30, 0.55); /* 🔥 semi-trasparente */
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(6px); /* 🔥 effetto vetro */
+  -webkit-backdrop-filter: blur(6px);
+  transition: transform 0.15s ease, background 0.2s ease;
+}
+
+/* Hover (desktop) */
+.card:hover {
+  transform: translateY(-3px);
+  background: rgba(40, 40, 60, 0.65);
 }
 
 .card img {
-  width: 110px;
-  height: 110px;
+  width: 95px;
+  height: 95px;
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: 10px;
 }
 
 .card-content h3 {
-  margin: 0 0 5px;
-  font-size: 18px;
+  margin: 0 0 4px;
+  font-size: 16px;
+  line-height: 1.2;
 }
 
 .card-content p {
   margin: 3px 0;
-  font-size: 14px;
+  font-size: 13px;
 }
 
 .card-meta {
-  font-size: 12px;
-  color: #aaa;
+  font-size: 11px;
+  color: #ccc;
 }
 
 .card a {
   display: inline-block;
-  margin-top: 8px;
+  margin-top: 6px;
   padding: 6px 10px;
   background: #4caf50;
   color: #fff;
   text-decoration: none;
   border-radius: 6px;
-  font-size: 13px;
+  font-size: 12px;
 }
 
-/* paginazione */
+/* ====== PAGINAZIONE ====== */
+
 .pagination {
   text-align: center;
-  margin-top: 25px;
+  margin-top: 20px;
 }
 
 .pagination button {
   margin: 0 3px;
   padding: 6px 10px;
-  border-radius: 5px;
+  border-radius: 6px;
   border: 1px solid #444;
-  background: #1f1f2b;
+  background: rgba(30, 30, 40, 0.6);
   color: #fff;
   cursor: pointer;
+  font-size: 13px;
 }
 
 .pagination button.active {
   background: #4caf50;
   border-color: #4caf50;
+}
+
+/* ====== MOBILE OPTIMIZATION ====== */
+
+@media (max-width: 600px) {
+  .card {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    padding: 15px;
+  }
+
+  .card img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .card-content h3 {
+    font-size: 17px;
+  }
+
+  .card-content p {
+    font-size: 14px;
+  }
+
+  .card a {
+    font-size: 14px;
+    padding: 8px 14px;
+  }
 }
