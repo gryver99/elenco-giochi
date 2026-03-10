@@ -13,8 +13,6 @@ async function loadData() {
   renderPage(1);
 }
 
-}
-
 function renderPage(page) {
   currentPage = page;
   const container = document.getElementById('cards-container');
@@ -30,25 +28,16 @@ function renderPage(page) {
 
     const icon = getStatusIcon(game.status);
 
-card.innerHTML = `
-  <img src="${game.image}" alt="${game.title}">
-  <div class="card-content">
-    <h3>${icon} ${game.title} Codes (${game.month}) – ${game.status}</h3>
-    <p>${game.description}</p>
-    <p class="card-meta">Aggiornato il ${formatDate(game.updated_at)}</p>
-    <a href="${game.url}">Leggi di più</a>
-  </div>
-`;
+    card.innerHTML = `
+      <img src="${game.image}" alt="${game.title}">
+      <div class="card-content">
+        <h3>${icon} ${game.title} Codes (${game.month}) – ${game.status}</h3>
+        <p>${game.description}</p>
+        <p class="card-meta">Aggiornato il ${formatDate(game.updated_at)}</p>
+        <a href="${game.url}">Leggi di più</a>
+      </div>
+    `;
 
-    function getStatusIcon(status) {
-  status = status.toLowerCase();
-  if (status.includes("new")) return "🆕";
-  if (status.includes("updated")) return "🔄";
-  if (status.includes("code")) return "🎁";
-  if (status.includes("bonus")) return "⭐";
-  return "🎮";
-}
-    
     container.appendChild(card);
   });
 
@@ -74,6 +63,15 @@ function renderPagination() {
     next.addEventListener('click', () => renderPage(currentPage + 1));
     pag.appendChild(next);
   }
+}
+
+function getStatusIcon(status) {
+  status = status.toLowerCase();
+  if (status.includes("new")) return "🆕";
+  if (status.includes("updated")) return "🔄";
+  if (status.includes("code")) return "🎁";
+  if (status.includes("bonus")) return "⭐";
+  return "🎮";
 }
 
 function formatDate(str) {
