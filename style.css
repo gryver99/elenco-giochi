@@ -33,7 +33,7 @@
   width: 150px;
   height: 100px;
 
-  background: #4caf50 !important; /* verde */
+  background: #4caf50 !important;
   border-radius: 12px;
   overflow: hidden;
 
@@ -46,27 +46,29 @@
 }
 
 /* ============================================================
-   GOOGLE SITES CREA WRAPPER INTERNI → LI ANNULLIAMO
+   ANNULLA TUTTI I DIV INTERNI AUTOMATICI
    ============================================================ */
-.card-image * {
-  all: unset !important;
-  display: block !important;
+.card-image > * {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: none !important;
 }
 
 /* ============================================================
    L’IMMAGINE RIEMPIE TUTTO IL RIQUADRO VERDE
    ============================================================ */
 .card-image img {
-  position: absolute !important;
-  top: 0;
-  left: 0;
-
   width: 100% !important;
   height: 100% !important;
 
   object-fit: cover !important;
   object-position: center !important;
 
+  display: block !important;
   max-width: none !important;
   max-height: none !important;
 }
@@ -151,11 +153,13 @@
     height: 180px;
   }
 
+  .card-image > * {
+    inset: 0 !important;
+  }
+
   .card-image img {
     width: 100% !important;
     height: 100% !important;
-    object-fit: cover !important;
-    object-position: center !important;
   }
 
   .card-content h3 {
