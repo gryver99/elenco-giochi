@@ -26,25 +26,32 @@
   box-shadow: 0 10px 22px rgba(0, 0, 0, 0.18);
 }
 
-/* ====== CONTENITORE IMMAGINE RETTANGOLARE ====== */
+/* ====== RIQUADRO VERDE A TUTTA IMMAGINE ====== */
 .card-image {
-  width: 140px;        /* più largo */
-  height: 80px;        /* più basso */
+  width: 150px;
+  height: 100px;              /* altezza del riquadro verde */
+  background: #4caf50;        /* colore verde */
   border-radius: 12px;
   overflow: hidden;
+  position: relative;
   flex-shrink: 0;
-  border: 2px solid rgba(76, 175, 80, 0.4);
-  background: #ddd;
+  padding: 0;
+  border: none;
 }
 
-/* Immagine adattata perfettamente */
+/* L'immagine riempie completamente il riquadro */
 .card-image img {
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;
-  object-position: center !important;
-  display: block !important;
+  position: absolute;
+  top: 0;
+  left: 0;
 
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;          /* riempie senza distorcere */
+  object-position: center;    /* centra il soggetto */
+
+  display: block;
   max-width: none !important;
   max-height: none !important;
 }
@@ -125,19 +132,15 @@
   }
 
   .card-image {
-    width: 200px;   /* più largo su mobile */
-    height: 120px;  /* proporzione panoramica */
+    width: 100%;
+    height: 180px;   /* più alta su mobile */
   }
 
   .card-image img {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover !important;
-    object-position: center !important;
-    display: block !important;
-
-    max-width: none !important;
-    max-height: none !important;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
   }
 
   .card-content h3 {
