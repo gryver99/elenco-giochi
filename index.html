@@ -1,20 +1,37 @@
-<!DOCTYPE html>
-<html lang="it">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Recenti</title>
-  <link rel="stylesheet" href="style.css?v=3">
-</head>
+<div class="gl-container">
+    <div class="gl-news-grid">
+        
+        <article class="gl-card">
+            <div class="gl-thumb">
+                <img src="https://via.placeholder.com/400x225/1a1a1a/00ff00?text=Anteprima+Gioco" alt="Titolo Notizia">
+                <div class="gl-category">News</div>
+            </div>
+            <div class="gl-body">
+                <span class="gl-date">10 Marzo 2024</span>
+                <h2 class="gl-title"><a href="#">Nuovo aggiornamento per l'esclusiva console: ecco i dettagli</a></h2>
+                <p class="gl-excerpt">Scopriamo insieme tutte le novità introdotte nell'ultima patch, dai miglioramenti grafici alle nuove missioni secondarie disponibili da oggi...</p>
+            </div>
+        </article>
 
-<body>
+        <article class="gl-card">
+            <div class="gl-thumb">
+                <img src="https://via.placeholder.com/400x225/1a1a1a/00ff00?text=Recensione" alt="Titolo Notizia">
+                <div class="gl-category">Recensioni</div>
+            </div>
+            <div class="gl-body">
+                <span class="gl-date">09 Marzo 2024</span>
+                <h2 class="gl-title"><a href="#">Recensione: Il miglior RPG dell'anno è finalmente arrivato?</a></h2>
+                <p class="gl-excerpt">Abbiamo provato per ore il nuovo titolo di punta e siamo pronti a dirvi se vale la pena acquistarlo al day one o aspettare...</p>
+            </div>
+        </article>
 
-  <h1>Elenco Giochi</h1>
+    </div>
 
-  <div id="cards-container" class="grid"></div>
-
-  <div id="pagination" class="pagination"></div>
-
-  <script src="script.js?v=3"></script>
-</body>
-</html>
+    <div class="gl-pagination">
+        <a href="#" class="gl-page-item prev">&laquo; Precedente</a>
+        <a href="#" class="gl-page-item active">1</a>
+        <a href="#" class="gl-page-item">2</a>
+        <a href="#" class="gl-page-item">3</a>
+        <a href="#" class="gl-page-item next">Successiva &raquo;</a>
+    </div>
+</div>
