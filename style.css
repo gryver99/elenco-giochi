@@ -39,11 +39,16 @@
 
 /* Immagine ritagliata perfettamente */
 .card-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  display: block !important;
+
+  /* 🔥 Soluzione 1: riempimento perfetto */
+  aspect-ratio: 1 / 1 !important;
+  max-width: none !important;
+  max-height: none !important;
 }
 
 /* ====== TESTO ====== */
@@ -126,17 +131,18 @@
     height: 130px;
   }
 
- .card-image img {
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;
-  object-position: center !important;
-  display: block !important;
+  .card-image img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    display: block !important;
 
-  /* 🔥 Queste due righe risolvono il problema */
-  max-width: none !important;
-  max-height: none !important;
-}
+    /* 🔥 Soluzione 1 anche su mobile */
+    aspect-ratio: 1 / 1 !important;
+    max-width: none !important;
+    max-height: none !important;
+  }
 
   .card-content h3 {
     font-size: 18px;
