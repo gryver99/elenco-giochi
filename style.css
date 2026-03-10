@@ -1,10 +1,6 @@
-/* ====== LARGHEZZA MASSIMA DEL WIDGET ====== */
-.page {
-  max-width: 650px;
-  margin: 0 auto;
-}
-
-/* ====== CARD ====== */
+/* ============================================================
+   CARD BASE
+   ============================================================ */
 .card {
   display: flex;
   gap: 14px;
@@ -26,7 +22,9 @@
   box-shadow: 0 10px 22px rgba(0, 0, 0, 0.18);
 }
 
-/* ====== RIQUADRO VERDE ====== */
+/* ============================================================
+   RIQUADRO VERDE (CONTENITORE REALE DELL’IMMAGINE)
+   ============================================================ */
 .card-image {
   width: 150px !important;
   height: 100px !important;
@@ -43,11 +41,10 @@
   border: none !important;
 }
 
-/* ====== ANNULLA TUTTI I WRAPPER INTERNI ====== */
-.card-image * {
-  all: unset !important;
-  display: block !important;
-
+/* ============================================================
+   ANNULLA TUTTI I WRAPPER INTERNI (GitHub + Sites)
+   ============================================================ */
+.card-image > * {
   position: absolute !important;
   inset: 0 !important;
 
@@ -59,8 +56,14 @@
   border: none !important;
 }
 
-/* ====== L’IMMAGINE RIEMPIE IL VERDE ====== */
+/* ============================================================
+   L’IMMAGINE RIEMPIE IL RIQUADRO VERDE AL 100%
+   ============================================================ */
 .card-image img {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+
   width: 100% !important;
   height: 100% !important;
 
@@ -69,9 +72,13 @@
 
   max-width: none !important;
   max-height: none !important;
+
+  display: block !important;
 }
 
-/* ====== TESTO ====== */
+/* ============================================================
+   TESTO
+   ============================================================ */
 .card-content h3 {
   font-size: 16px;
   font-weight: 700;
@@ -90,7 +97,9 @@
   color: #333 !important;
 }
 
-/* ====== BOTTONE ====== */
+/* ============================================================
+   BOTTONE
+   ============================================================ */
 .card a {
   display: inline-block;
   margin-top: 6px;
@@ -109,7 +118,9 @@
   transform: translateY(-2px);
 }
 
-/* ====== PAGINAZIONE ====== */
+/* ============================================================
+   PAGINAZIONE
+   ============================================================ */
 .pagination {
   text-align: center;
   margin-top: 18px;
@@ -138,7 +149,9 @@
   color: #fff !important;
 }
 
-/* ====== MOBILE ====== */
+/* ============================================================
+   MOBILE
+   ============================================================ */
 @media (max-width: 600px) {
   .card {
     flex-direction: column;
@@ -147,8 +160,8 @@
   }
 
   .card-image {
-    width: 100%;
-    height: 180px;
+    width: 100% !important;
+    height: 180px !important;
   }
 
   .card-image > * {
