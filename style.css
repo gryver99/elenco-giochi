@@ -1,11 +1,11 @@
 /* ====== STRUTTURA GENERALE ====== */
 
 html, body {
-  background: transparent !important; /* 🔥 Forza trasparenza totale */
+  background: transparent !important;
   margin: 0;
   padding: 0;
   font-family: system-ui, sans-serif;
-  color: #f5f5f5;
+  color: #000; /* 🔥 Testo nero */
 }
 
 .page {
@@ -18,6 +18,7 @@ h1 {
   text-align: center;
   margin-bottom: 20px;
   font-size: 22px;
+  color: #000; /* 🔥 Titolo nero */
 }
 
 /* ====== CARD ====== */
@@ -34,19 +35,17 @@ h1 {
   padding: 14px;
   border-radius: 14px;
 
-  /* 🔥 Glass effect super leggero */
   background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(0, 0, 0, 0.15);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
 
   transition: transform 0.15s ease, background 0.2s ease;
 }
 
-/* Hover (desktop) */
 .card:hover {
   transform: translateY(-3px);
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.15);
 }
 
 .card img {
@@ -54,22 +53,25 @@ h1 {
   height: 95px;
   object-fit: cover;
   border-radius: 10px;
+  cursor: pointer; /* 🔥 indica che è cliccabile */
 }
 
 .card-content h3 {
   margin: 0 0 4px;
   font-size: 16px;
   line-height: 1.25;
+  color: #000; /* 🔥 Titolo nero */
 }
 
 .card-content p {
   margin: 3px 0;
   font-size: 13px;
+  color: #000; /* 🔥 Testo nero */
 }
 
 .card-meta {
   font-size: 11px;
-  color: #ddd;
+  color: #333; /* 🔥 Grigio scuro */
 }
 
 .card a {
@@ -94,19 +96,20 @@ h1 {
   margin: 0 3px;
   padding: 6px 10px;
   border-radius: 6px;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  background: rgba(255, 255, 255, 0.10);
-  color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  background: rgba(0, 0, 0, 0.05);
+  color: #000;
   cursor: pointer;
   font-size: 13px;
 }
 
 .pagination button.active {
   background: #4caf50;
+  color: #fff;
   border-color: #4caf50;
 }
 
-/* ====== MOBILE OPTIMIZATION ====== */
+/* ====== MOBILE ====== */
 
 @media (max-width: 600px) {
   .card {
