@@ -26,34 +26,47 @@
   box-shadow: 0 10px 22px rgba(0, 0, 0, 0.18);
 }
 
-/* ====== RIQUADRO VERDE CHE CONTIENE L’IMMAGINE ====== */
+/* ============================================================
+   RIQUADRO VERDE CHE DEVE ESSERE RIEMPITO DALL’IMMAGINE
+   ============================================================ */
 .card-image {
   width: 150px;
   height: 100px;
 
-  background: #4caf50;     /* verde */
+  background: #4caf50 !important; /* verde */
   border-radius: 12px;
   overflow: hidden;
 
   position: relative;
   flex-shrink: 0;
-  padding: 0;
-  border: none;
+
+  padding: 0 !important;
+  margin: 0 !important;
+  border: none !important;
 }
 
-/* ====== L’IMMAGINE RIEMPIE TUTTO IL VERDE ====== */
+/* ============================================================
+   GOOGLE SITES CREA WRAPPER INTERNI → LI ANNULLIAMO
+   ============================================================ */
+.card-image * {
+  all: unset !important;
+  display: block !important;
+}
+
+/* ============================================================
+   L’IMMAGINE RIEMPIE TUTTO IL RIQUADRO VERDE
+   ============================================================ */
 .card-image img {
-  position: absolute;
+  position: absolute !important;
   top: 0;
   left: 0;
 
-  width: 100%;
-  height: 100%;
+  width: 100% !important;
+  height: 100% !important;
 
-  object-fit: cover;        /* riempie senza distorcere */
-  object-position: center;  /* centra il soggetto */
+  object-fit: cover !important;
+  object-position: center !important;
 
-  display: block;
   max-width: none !important;
   max-height: none !important;
 }
@@ -135,14 +148,14 @@
 
   .card-image {
     width: 100%;
-    height: 180px;   /* più alta su mobile */
+    height: 180px;
   }
 
   .card-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center !important;
   }
 
   .card-content h3 {
