@@ -1,116 +1,64 @@
-/* ====== STRUTTURA GENERALE ====== */
-
-html, body {
+/* ====== FORZA TRASPARENZA ====== */
+html, body, .page, .cards-container, .card {
   background: transparent !important;
-  margin: 0;
-  padding: 0;
-  font-family: system-ui, sans-serif;
-  color: #000; /* 🔥 Testo nero */
 }
 
-.page {
-  max-width: 900px;
-  margin: 20px auto;
-  padding: 0 10px;
-}
-
-h1 {
-  text-align: center;
-  margin-bottom: 20px;
-  font-size: 22px;
-  color: #000; /* 🔥 Titolo nero */
+/* ====== TESTO NERO FORZATO ====== */
+h1, h2, h3, p, span, a, .card-content, .card-content h3, .card-content p, .card-meta {
+  color: #000 !important;
 }
 
 /* ====== CARD ====== */
-
-.cards-container {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
 .card {
   display: flex;
   gap: 12px;
   padding: 14px;
   border-radius: 14px;
 
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(0, 0, 0, 0.15);
+  /* glass effect leggero */
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
 
-  transition: transform 0.15s ease, background 0.2s ease;
+  border: 1px solid rgba(0, 0, 0, 0.15) !important;
 }
 
-.card:hover {
-  transform: translateY(-3px);
-  background: rgba(255, 255, 255, 0.15);
-}
-
+/* ====== IMMAGINI ====== */
 .card img {
   width: 95px;
   height: 95px;
   object-fit: cover;
   border-radius: 10px;
-  cursor: pointer; /* 🔥 indica che è cliccabile */
+  cursor: pointer;
 }
 
-.card-content h3 {
-  margin: 0 0 4px;
-  font-size: 16px;
-  line-height: 1.25;
-  color: #000; /* 🔥 Titolo nero */
-}
-
-.card-content p {
-  margin: 3px 0;
-  font-size: 13px;
-  color: #000; /* 🔥 Testo nero */
-}
-
-.card-meta {
-  font-size: 11px;
-  color: #333; /* 🔥 Grigio scuro */
-}
-
+/* ====== BOTTONE ====== */
 .card a {
   display: inline-block;
   margin-top: 6px;
   padding: 6px 10px;
-  background: #4caf50;
-  color: #fff;
+  background: #4caf50 !important;
+  color: #fff !important;
   text-decoration: none;
   border-radius: 6px;
   font-size: 12px;
 }
 
 /* ====== PAGINAZIONE ====== */
-
-.pagination {
-  text-align: center;
-  margin-top: 20px;
-}
-
 .pagination button {
   margin: 0 3px;
   padding: 6px 10px;
   border-radius: 6px;
-  border: 1px solid rgba(0, 0, 0, 0.25);
-  background: rgba(0, 0, 0, 0.05);
-  color: #000;
-  cursor: pointer;
-  font-size: 13px;
+  border: 1px solid rgba(0, 0, 0, 0.25) !important;
+  background: rgba(0, 0, 0, 0.05) !important;
+  color: #000 !important;
 }
 
 .pagination button.active {
-  background: #4caf50;
-  color: #fff;
-  border-color: #4caf50;
+  background: #4caf50 !important;
+  color: #fff !important;
 }
 
 /* ====== MOBILE ====== */
-
 @media (max-width: 600px) {
   .card {
     flex-direction: column;
