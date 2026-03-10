@@ -37,18 +37,18 @@
   background: #ddd;
 }
 
-/* Immagine ritagliata perfettamente */
+/* ====== SOLUZIONE B: CROP INTELLIGENTE ====== */
 .card-image img {
-  width: 100% !important;
-  height: 100% !important;
+  width: 120% !important;        /* zoom leggero per evitare bordi */
+  height: 120% !important;
   object-fit: cover !important;
   object-position: center !important;
   display: block !important;
 
-  /* 🔥 Soluzione 1: riempimento perfetto */
-  aspect-ratio: 1 / 1 !important;
   max-width: none !important;
   max-height: none !important;
+
+  transform: translate(-10%, -10%); /* centratura dinamica */
 }
 
 /* ====== TESTO ====== */
@@ -132,16 +132,16 @@
   }
 
   .card-image img {
-    width: 100% !important;
-    height: 100% !important;
+    width: 130% !important;
+    height: 130% !important;
     object-fit: cover !important;
     object-position: center !important;
     display: block !important;
 
-    /* 🔥 Soluzione 1 anche su mobile */
-    aspect-ratio: 1 / 1 !important;
     max-width: none !important;
     max-height: none !important;
+
+    transform: translate(-15%, -15%);
   }
 
   .card-content h3 {
